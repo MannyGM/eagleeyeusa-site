@@ -1,0 +1,57 @@
+/* eagleeyeusa.com: one page, dark steel header with a gold accent, light reading sections. */
+:root {
+  --bg: #f5f7fa;
+  --paper: #ffffff;
+  --ink: #16202b;
+  --muted: #566372;
+  --line: #dde3ea;
+  --steel: #121c27;
+  --steel-2: #1d2c3c;
+  --gold: #c8962e;
+  --link: #1f5f99;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #0d141c; --paper: #15202b; --ink: #e5ebf1; --muted: #9aa8b6; --line: #263545; --link: #7fb5e6; }
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.65 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 0 16px; }
+a { color: var(--link); }
+
+/* Hero photo (two cameras on a dark wall) under a dark overlay so the text stays readable */
+.top {
+  background:
+    linear-gradient(90deg, rgba(10,16,24,.92) 0%, rgba(10,16,24,.75) 45%, rgba(10,16,24,.35) 100%),
+    url("img/hero.jpg") center 35% / cover no-repeat,
+    var(--steel);
+  color: #fff;
+}
+.slogan { color: var(--gold); font-size: clamp(1.1rem, 2.6vw, 1.4rem); font-style: italic; font-weight: 600; margin: 0 0 14px; }
+.photo { display: block; width: calc(100% + 44px); height: 170px; object-fit: cover; margin: -20px -22px 16px; border-radius: 9px 9px 0 0; }
+.photo-network { object-position: 85% 85%; }
+.photo-app { object-position: center 30%; background: #0b4d2c; }
+.bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 16px; flex-wrap: wrap; }
+.brand { color: #fff; text-decoration: none; font-weight: 800; letter-spacing: .12em; }
+.brand span { color: var(--gold); }
+nav { display: flex; gap: 18px; flex-wrap: wrap; }
+nav a { color: #d8e1ea; text-decoration: none; font-size: .95rem; }
+nav a:hover { color: #fff; text-decoration: underline; text-underline-offset: 4px; }
+.hero { padding-block: 72px 88px; }
+.eyebrow { color: var(--gold); text-transform: uppercase; letter-spacing: .14em; font-size: .78rem; font-weight: 700; margin: 0 0 10px; }
+h1 { font-size: clamp(2rem, 6vw, 3.2rem); line-height: 1.1; margin: 0 0 14px; }
+.lede { font-size: 1.15rem; color: #c9d4df; max-width: 60ch; margin: 0 0 26px; }
+.button { display: inline-block; background: var(--gold); color: #1a1406; padding: 11px 20px; border-radius: 8px; text-decoration: none; font-weight: 700; }
+
+section { padding-block: 40px 8px; }
+h2 { font-size: 1.6rem; margin: 0 0 12px; }
+h3 { font-size: 1.1rem; margin: 0 0 6px; }
+p { max-width: 70ch; }
+.grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.card { background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 20px 22px; border-top: 3px solid var(--gold); overflow: hidden; }
+.card p { margin: 0 0 8px; color: var(--muted); }
+.card.contact p, .card.app p { color: var(--ink); }
+.links { font-size: .95rem; }
+
+footer { margin-top: 48px; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
+footer .wrap { padding-block: 18px 28px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
