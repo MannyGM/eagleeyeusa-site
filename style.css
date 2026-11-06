@@ -1,22 +1,25 @@
 /* eagleeyeusa.com: five pages, dark steel header with a gold accent, light reading sections. */
 :root {
-  --bg: #f5f7fa;
+  --bg: #dde6ef;
+  --dots: rgba(18,28,39,.08);
+  --shadow: 0 3px 12px rgba(18,28,39,.10);
   --paper: #ffffff;
   --ink: #16202b;
-  --muted: #566372;
-  --line: #dde3ea;
+  --muted: #4c5866;
+  --line: #cdd7e1;
   --steel: #121c27;
   --steel-2: #1d2c3c;
   --gold: #c8962e;
-  --gold-text: #8a6414;
+  --gold-text: #6f4f0c;
   --link: #1f5f99;
 }
 @media (prefers-color-scheme: dark) {
-  :root { --bg: #0d141c; --paper: #15202b; --ink: #e5ebf1; --muted: #9aa8b6; --line: #263545; --gold-text: #d9a93f; --link: #7fb5e6; }
+  :root { --bg: #0d141c; --dots: rgba(255,255,255,.05); --shadow: 0 3px 12px rgba(0,0,0,.35); --paper: #15202b; --ink: #e5ebf1; --muted: #9aa8b6; --line: #263545; --gold-text: #d9a93f; --link: #7fb5e6; }
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 116px; }
-body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.65 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+/* Soft steel blue with a faint dot texture; white cards sit on top */
+body { margin: 0; background: radial-gradient(var(--dots) 1px, transparent 1.3px) 0 0 / 18px 18px, var(--bg); color: var(--ink); font: 16px/1.65 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
 .wrap { max-width: 1080px; margin: 0 auto; padding-inline: 16px; }
 a { color: var(--link); }
 img { max-width: 100%; }
@@ -67,6 +70,7 @@ h1 { font-size: clamp(2rem, 6vw, 3.4rem); line-height: 1.1; margin: 0 0 14px; }
 
 .block { padding-block: 52px 0; }
 .tiles { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); margin-top: 20px; }
+.tile, .feature, .card, .steps li { box-shadow: var(--shadow); }
 .tile { display: flex; flex-direction: column; background: var(--paper); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; color: var(--ink); text-decoration: none; transition: transform .15s ease, box-shadow .15s ease; }
 .tile:hover { transform: translateY(-3px); box-shadow: 0 10px 26px rgba(10,20,30,.16); }
 .tile img { display: block; width: 100%; height: 180px; object-fit: cover; }
@@ -86,6 +90,8 @@ img.crop-network { object-fit: cover; object-position: 85% 85%; }
 
 .feature { display: flex; align-items: center; gap: 36px; flex-wrap: wrap; background: var(--paper); border: 1px solid var(--line); border-top: 3px solid var(--gold); border-radius: 12px; padding: 28px; }
 .feature > div { flex: 1 1 280px; }
+.feature-photo { flex: 1 1 320px; min-width: 0; width: 100%; height: 340px; object-fit: cover; border-radius: 10px; }
+.feature-action { margin: 18px 0 0; }
 .phone { width: 190px; height: auto; border-radius: 18px; flex: none; margin-inline: auto; }
 .badges { margin: 16px 0 8px; }
 .badge { display: inline-block; background: var(--steel-2); color: #fff; font-size: .8rem; font-weight: 600; border-radius: 999px; padding: 3px 12px; margin-bottom: 6px; }
@@ -129,6 +135,7 @@ footer p { margin: 0 0 8px; }
   .split > img { height: 230px; }
   .split.reverse > img { order: 0; }
   .feature { padding: 22px 18px; }
+  .feature-photo { height: 210px; flex-basis: 100%; }
 }
 
 /* Coming-soon apps: phone picture beside the text */
