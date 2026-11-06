@@ -30,7 +30,11 @@ a { color: var(--link); }
 .slogan { color: var(--gold); font-size: clamp(1.1rem, 2.6vw, 1.4rem); font-style: italic; font-weight: 600; margin: 0 0 14px; }
 .photo { display: block; width: calc(100% + 44px); height: 170px; object-fit: cover; margin: -20px -22px 16px; border-radius: 9px 9px 0 0; }
 .photo-network { object-position: 85% 85%; }
-.photo-app { object-position: center 30%; background: #0b4d2c; }
+.card.app { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
+.card.app > div { flex: 1 1 260px; }
+.phone { width: 170px; height: auto; border-radius: 18px; flex: none; }
+.photo-tech { height: auto; aspect-ratio: 960 / 548; }
+.soon { margin-top: 14px; }
 .bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 16px; flex-wrap: wrap; }
 .brand { display: inline-flex; align-items: center; gap: 12px; color: #fff; text-decoration: none; font-weight: 800; letter-spacing: .12em; }
 .logo { width: 52px; height: 52px; border-radius: 50%; background: #fff; border: 2px solid var(--gold); object-fit: cover; flex: none; }
